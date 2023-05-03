@@ -17,7 +17,7 @@ use Abraham\TwitterOAuth\{
     Token,
     Util\JsonDecoder,
 };
-use Composer\CaBundle\CaBundle;
+# use Composer\CaBundle\CaBundle;
 
 /**
  * TwitterOAuth class for interacting with the Twitter API.
@@ -616,7 +616,7 @@ class TwitterOAuth extends Config
      */
     private function curlOptions(): array
     {
-        $bundlePath = CaBundle::getSystemCaRootBundlePath();
+        // $bundlePath = CaBundle::getSystemCaRootBundlePath();
         $options = [
             // CURLOPT_VERBOSE => true,
             CURLOPT_CONNECTTIMEOUT => $this->connectionTimeout,
@@ -626,7 +626,7 @@ class TwitterOAuth extends Config
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_USERAGENT => $this->userAgent,
-            $this->curlCaOpt($bundlePath) => $bundlePath,
+            // $this->curlCaOpt($bundlePath) => $bundlePath,
         ];
 
         if ($this->gzipEncoding) {
